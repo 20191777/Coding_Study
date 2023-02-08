@@ -1,11 +1,5 @@
-from string import ascii_lowercase
-
 word = input()
+low_alpahbet = list(range(97,123))  # 아스키코드 숫자 범위
 
-ans = []
-
-for i in ascii_lowercase:
-    idx = word.find(i)
-    ans.append(idx)
-for s in ans:
-    print(s, end=" ")
+for x in low_alpahbet :
+    print(word.find(chr(x))) 
