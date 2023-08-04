@@ -1,10 +1,13 @@
 import sys
+input = sys.stdin.readline
 
-n = int(sys.stdin.readline().rstrip())
-l = []
-for _ in range(n):
-    l.append(list(reversed(list(map(int, sys.stdin.readline().rstrip().split())))))
+N = int(input())
+L = []
 
-l.sort()
-for i in range(n):
-    print(" ".join(map(str, list(reversed(l[i])))))
+for i in range(N):
+    x, y = map(int, input().split())
+    L.append((x, y))
+
+L = sorted(L, key=lambda x: (x[1], x[0]))
+for i in range(N):
+    print(L[i][0], L[i][1])
