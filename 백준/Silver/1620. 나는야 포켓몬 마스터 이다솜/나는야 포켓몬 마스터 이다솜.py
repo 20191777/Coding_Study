@@ -1,15 +1,19 @@
 import sys
 
 input = sys.stdin.readline
+
 n, m = map(int, input().split())
 
-po_list = []
-for i in range(n):
-    po_list.append(input().rstrip())
+dict = {}
+
+for i in range(1, n + 1):
+    a = input().rstrip()
+    dict[i] = a
+    dict[a] = i
 
 for i in range(m):
-    question = input().rstrip()
-    if question.isdigit():
-        print(po_list[int(question)-1])
+    quest = input().rstrip()
+    if quest.isdigit():
+        print(dict[int(quest)])
     else:
-        print(po_list.index(question) + 1)
+        print(dict[quest])
