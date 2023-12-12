@@ -1,14 +1,10 @@
 from collections import deque
 
-def solution(arr):
-    d = deque(arr)
-    answer = []
-    for i in range(len(arr)-1):
-        if arr[i] == arr[i+1]:
-            d.popleft()
-        else:
-            answer.append(d.popleft())
+def solution(s):
+    # 함수를 완성하세요
+    result = []
+    for c in s:
+        if len(result) == 0 or result[-1] != c:
+            result.append(c)
 
-        if i == len(arr)-2:
-            answer.append(d.popleft())
-    return answer
+    return result
