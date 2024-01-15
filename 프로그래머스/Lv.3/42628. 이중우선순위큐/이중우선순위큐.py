@@ -7,7 +7,7 @@ def solution(operations):
         if oper[0] == "I":
             heapq.heappush(heap, int(oper[2:]))
         elif oper[0] == "D" and oper[2:] == "1" and len(heap) > 0:
-            heap.pop()
+            heap.remove(max(heap))
         elif oper[0] == "D" and oper[2:] == "-1" and len(heap) > 0:
             heapq.heappop(heap)
         #print(heap)
